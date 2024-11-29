@@ -1,0 +1,7 @@
+{
+  "name": "@lok/styles",
+  "version": "0.0.0",
+  "description": "Design system styles and css/sass utilities",
+  "author": "lmolinar",
+  "repository": "https://github.com/lmolinar/design-system-monorepo"
+}

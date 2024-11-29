@@ -1,0 +1,87 @@
+@import "settings";
+
+// Globals taken from https://github.com/foundation/foundation-sites/blob/develop/scss/_global.scss
+
+html {
+    box-sizing: border-box;
+    font-size: $global-font-size;
+    font-family: $body-font-family;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: $body-font-family;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-weight: $global-weight-normal;
+    line-height: $global-lineheight;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+
+    background: $body-background;
+    color: $black;
+}
+
+img {
+    // Get rid of gap under images by making them display: inline-block; by default
+    display: inline-block;
+    vertical-align: middle;
+
+    // Grid defaults to get images and embeds to work properly
+    max-width: 100%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+}
+
+// Make sure textarea takes on height automatically
+textarea {
+    height: auto;
+    min-height: 50px;
+    border-radius: $global-radius;
+}
+
+// Make select elements are 100% width by default
+select {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: $global-radius;
+}
+
+// Reset <button> styles created by most browsers
+button {
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    border-radius: $global-radius;
+    background: transparent;
+    line-height: 1;
+    cursor: pointer;
+}
+
+// Prevent text overflow on pre
+pre {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+// Make reset inherit font-family instead of settings sans-serif
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+}

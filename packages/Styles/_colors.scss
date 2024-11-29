@@ -1,0 +1,91 @@
+$black: #002233;
+$white: white;
+
+// Design System Palettes
+
+$yellowPalette: (
+    light-5: #fffbdb,
+    light-4: #fff8cc,
+    light-3: #fff4ad,
+    light-2: #fff199,
+    light-1: #ffef85,
+    normal: #ffeb66,
+    dark-1: #d3c358,
+    dark-2: #a69b46,
+    dark-3: #7a7333,
+    dark-4: #68622c,
+    dark-5: #5a5526,
+);
+$bluePalette: (
+    light-5: #e6f6fe,
+    light-4: #d6f1ff,
+    light-3: #c3eafe,
+    light-2: #9ad6f4,
+    light-1: #74c4ec,
+    normal: #007ab8,
+    dark-1: #0070a8,
+    dark-2: #006394,
+    dark-3: #005c8a,
+    dark-4: #004e75,
+    dark-5: #004466,
+);
+$grayPalette: (
+    light-5: #f1f6f8,
+    light-4: #e3edf2,
+    light-3: #ccdde6,
+    light-2: #abc2ce,
+    light-1: #90adbc,
+    normal: #7498aa,
+    dark-1: #658494,
+    dark-2: #55707d,
+    dark-3: #465c67,
+    dark-4: #34444c,
+    dark-5: #2a363c,
+);
+$greenPalette: (
+    light-5: #dbffed,
+    light-4: #c7ffde,
+    light-3: #a1f4c5,
+    light-2: #7ae8ac,
+    light-1: #54dd93,
+    normal: #2ed17a,
+    dark-1: #22bb69,
+    dark-2: #1aa25a,
+    dark-3: #1b7e49,
+    dark-4: #166f3f,
+    dark-5: #0b6635,
+);
+$orangePalette: (
+    light-5: #fff3e0,
+    light-4: #ffebcc,
+    light-3: #fcdba8,
+    light-2: #facb85,
+    light-1: #f7bb61,
+    normal: #f5ab3d,
+    dark-1: #d69129,
+    dark-2: #b87614,
+    dark-3: #995c00,
+    dark-4: #855000,
+    dark-5: #704300,
+);
+$redPalette: (
+    light-5: #ffe9e5,
+    light-4: #ffdad7,
+    light-3: #fac1bc,
+    light-2: #f0968f,
+    light-1: #e87870,
+    normal: #e05b52,
+    dark-1: #cb5148,
+    dark-2: #b6473f,
+    dark-3: #a13d36,
+    dark-4: #913730,
+    dark-5: #82312b,
+);
+$designSystemPalette: (
+    "blue": $bluePalette,
+    "yellow": $yellowPalette,
+    "green": $greenPalette,
+    "red": $redPalette,
+    "orange": $orangePalette,
+    "gray": $grayPalette,
+);

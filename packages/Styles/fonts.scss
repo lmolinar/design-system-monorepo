@@ -1,0 +1,17 @@
+// Inter fonts
+
+// https://github.com/rsms/inter
+// https://www.npmjs.com/package/inter-ui
+
+@use "~inter-ui/default" with (
+    $inter-font-display: swap,
+    $inter-font-path: "~inter-ui/web"
+);
+
+@use "~inter-ui/variable" with (
+    $inter-font-display: swap,
+    $inter-font-path: "~inter-ui/variable"
+);
+
+@include default.all;
+@include variable.all;
