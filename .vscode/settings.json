@@ -1,0 +1,17 @@
+{
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#1d8c48",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#265e2f",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "sash.hoverBorder": "#1d8c48"
+  }
+}
