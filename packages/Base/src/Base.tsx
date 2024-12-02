@@ -1,19 +1,22 @@
 import "@lok/base/dist/styles.css";
 
-import type { Overwrite } from "@lok/types";
+import { Overwrite } from "@lok/types";
 import cx from "classnames";
-import type { AllHTMLAttributes, ForwardRefExoticComponent, ReactHTML, ReactNode, RefAttributes } from "react";
-import * as React from "react";
+import {
+    AllHTMLAttributes,
+    createElement,
+    forwardRef,
+    ForwardRefExoticComponent,
+    ReactHTML,
+    ReactNode,
+    RefAttributes,
+} from "react";
 
-import type { BorderProp } from "./utils/useBorder";
-import { useBorder } from "./utils/useBorder";
-import type { Color, Shade } from "./utils/useColor";
-import { useColor } from "./utils/useColor";
-import type { FlexItemProp } from "./utils/useFlex";
-import { useFlexItem } from "./utils/useFlex";
+import { BorderProp, useBorder } from "./utils/useBorder";
+import { Color, Shade, useColor } from "./utils/useColor";
+import { FlexItemProp, useFlexItem } from "./utils/useFlex";
 import { useHoverStyles } from "./utils/useHoverStyles";
-import type { SpacingProp } from "./utils/useSpacing";
-import { useSpacing } from "./utils/useSpacing";
+import { SpacingProp, useSpacing } from "./utils/useSpacing";
 
 const verticalAlignValues = ["top", "middle", "bottom", "baseline"] as const;
 const cursorValues = ["pointer", "default", "not-allowed", "none", "progress", "text", "grab", "grabbing"] as const;
@@ -49,7 +52,7 @@ export type BaseProps<T = Element> = Overwrite<
 > &
     RefAttributes<T>;
 
-export const Base: ForwardRefExoticComponent<BaseProps> = React.forwardRef(
+export const Base: ForwardRefExoticComponent<BaseProps> = forwardRef(
     (
         {
             htmlTag = "div",
@@ -121,7 +124,7 @@ export const Base: ForwardRefExoticComponent<BaseProps> = React.forwardRef(
             ...(dataTestId ? { "data-testid": dataTestId } : null),
         };
 
-        return React.createElement(htmlTag as unknown as string, { ...forwardedProps, ref }, children);
+        return createElement(htmlTag as unknown as string, { ...forwardedProps, ref }, children);
     }
 );
 

@@ -3,7 +3,7 @@
     // https://www.typescriptlang.org/tsconfig#isolatedModules
     "isolatedModules": true,
     "esModuleInterop": true, // allow imports of modules in ES format
-    "jsx": "react",
+    "jsx": "react-jsx",
     "resolveJsonModule": true, // enable import of JSON files
     "target": "es2015",
     "moduleResolution": "Node",

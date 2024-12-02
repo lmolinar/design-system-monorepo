@@ -1,0 +1,20 @@
+{
+  "name": "@lok/text",
+  "version": "0.0.0",
+  "description": "Base component with typhography styles.",
+  "author": "lmolinar",
+  "license": "UNLICENSED",
+  "main": "dist/lok-text.cjs.js",
+  "module": "dist/lok-text.esm.js",
+  "types": "dist/lok-text.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/lmolinar/design-system-monorepo",
+  "peerDependencies": {
+    "@lok/text": ">=0.0.0",
+    "@lok/base": "^0.0.0",
+    "classnames": "^2.5.1",
+    "react": "^18.3.1"
+  }
+}
