@@ -1,0 +1,21 @@
+{
+  "name": "@lok/input-field",
+  "version": "0.0.0",
+  "description": "Implementation of an input field",
+  "author": "lmolinar",
+  "license": "UNLICENSED",
+  "main": "dist/lok-input-field.cjs.js",
+  "module": "dist/lok-input-field.esm.js",
+  "types": "dist/lok-input-field.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/lmolinar/design-system-monorepo",
+  "peerDependencies": {
+    "@lok/input-field": ">=0.0.0",
+    "@lok/base": "^0.0.0",
+    "@lok/styles": "^0.0.0",
+    "classnames": "^2.5.1",
+    "react": "^18.3.1"
+  }
+}

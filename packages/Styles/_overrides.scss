@@ -5,7 +5,12 @@ $body-font-family: "InterVariable", "Inter", "Helvetica Neue", Helvetica, Arial,
 $global-font-size: 100%;
 $global-lineheight: 1.5;
 $global-radius: 0;
+$global-border-radius: 4px;
+$global-weight-light: 300;
 $global-weight-normal: 400;
+$global-weight-medium: 500;
+$global-weight-semiBold: 600;
+$global-weight-bold: 700;
 
 html {
     box-sizing: border-box;

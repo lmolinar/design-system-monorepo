@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "sass:math";
 
 @use "colors";
@@ -47,7 +48,7 @@
     } @else if $color == "white" {
         @return colors.$white;
     } @else {
-        @return map-get(map-get($designSystemPalette, $color), $shade);
+        @return map.get(map.get(colors.$designSystemPalette, $color), $shade);
     }
 }
 
