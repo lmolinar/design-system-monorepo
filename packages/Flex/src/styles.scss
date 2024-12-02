@@ -1,0 +1,53 @@
+@use "@lok/styles/utils.scss" as utils;
+
+$justifyContentValues: "flex-start", "flex-end", "center", "space-between", "space-around", "initial", "inherit";
+$flexWrapValues: "wrap", "nowrap", "wrap-reverse";
+$alignItemsValues: "stretch", "center", "flex-start", "flex-end", "baseline", "initial", "inherit";
+$flexDirectionValues: "row", "column", "row-reverse", "column-reverse";
+$gap-properties: "gap", "row-gap", "column-gap";
+
+@include utils.b("flex") {
+    display: flex;
+
+    @include utils.m("inline") {
+        display: inline-flex;
+    }
+
+    @each $jcValue in $justifyContentValues {
+        &.jc-#{$jcValue} {
+            justify-content: #{$jcValue};
+        }
+    }
+
+    @each $wrapValue in $flexWrapValues {
+        &.w-#{$wrapValue} {
+            flex-wrap: #{$wrapValue}; // stylelint-disable-line property-disallowed-list
+        }
+    }
+
+    @each $aiValue in $alignItemsValues {
+        &.ai-#{$aiValue} {
+            align-items: #{$aiValue};
+        }
+    }
+
+    @each $directionValue in $flexDirectionValues {
+        &.dir-#{$directionValue} {
+            flex-direction: #{$directionValue};
+        }
+    }
+
+    @each $property in $gap-properties {
+        @for $i from 0 to 11 {
+            &.#{$property}-#{$i} {
+                @include utils.spacing($property, $i);
+            }
+        }
+        &.#{$property}-0p5 {
+            @include utils.spacing($property, 0.5);
+        }
+        &.#{$property}-1p5 {
+            @include utils.spacing($property, 1.5);
+        }
+    }
+}

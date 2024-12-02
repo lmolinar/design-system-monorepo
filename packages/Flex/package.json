@@ -1,0 +1,19 @@
+{
+  "name": "@lok/flex",
+  "version": "0.0.0",
+  "description": "Base Component with flex styles.",
+  "author": "devs@lok",
+  "main": "dist/lok-flex.cjs.js",
+  "module": "dist/lok-flex.esm.js",
+  "types": "dist/lok-flex.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/lmolinar/design-system-monorepo",
+  "peerDependencies": {
+    "@lok/flex": ">=0.0.0",
+    "@lok/base": "^0.0.0",
+    "classnames": "^2.5.1",
+    "react": "^18.3.1"
+  }
+}

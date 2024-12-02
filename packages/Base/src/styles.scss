@@ -129,29 +129,6 @@ $alignSelfValues: "auto", "flex-start", "flex-end", "center", "baseline", "stret
     }
 }
 
-// spacing
-
-$base-spacing: 0.25rem;
-
-/// Mixins
-
-@mixin spacing($property, $spacing-factor) {
-    #{$property}: $spacing-factor * $base-spacing;
-}
-
-/// Variables
-
-$spacing-1: $base-spacing;
-$spacing-2: $base-spacing * 2;
-$spacing-3: $base-spacing * 3;
-$spacing-4: $base-spacing * 4;
-$spacing-5: $base-spacing * 5;
-$spacing-6: $base-spacing * 6;
-$spacing-7: $base-spacing * 7;
-$spacing-8: $base-spacing * 8;
-$spacing-9: $base-spacing * 9;
-$spacing-10: $base-spacing * 10;
-
 /// Helper classes for spacings
 
 /*
@@ -172,25 +149,25 @@ $ds-spacings: margin, margin-left, margin-right, margin-top, margin-bottom, padd
 @each $property in $ds-spacings {
     @for $i from 0 to 11 {
         .#{$property}-#{$i} {
-            @include spacing($property, $i);
+            @include utils.spacing($property, $i);
         }
 
         .h-#{$property}-#{$i}:hover {
-            @include spacing($property, $i);
+            @include utils.spacing($property, $i);
         }
     }
     .#{$property}-0p5 {
-        @include spacing($property, 0.5);
+        @include utils.spacing($property, 0.5);
     }
     .#{$property}-1p5 {
-        @include spacing($property, 1.5);
+        @include utils.spacing($property, 1.5);
     }
 
     .h-#{$property}-0p5:hover {
-        @include spacing($property, 0.5);
+        @include utils.spacing($property, 0.5);
     }
     .h-#{$property}-1p5:hover {
-        @include spacing($property, 1.5);
+        @include utils.spacing($property, 1.5);
     }
 }
 

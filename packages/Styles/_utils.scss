@@ -81,6 +81,18 @@
     }
 }
 
+$base-spacing: 0.25rem;
+$spacing-1: $base-spacing;
+$spacing-2: $base-spacing * 2;
+$spacing-3: $base-spacing * 3;
+$spacing-4: $base-spacing * 4;
+$spacing-5: $base-spacing * 5;
+$spacing-6: $base-spacing * 6;
+$spacing-7: $base-spacing * 7;
+$spacing-8: $base-spacing * 8;
+$spacing-9: $base-spacing * 9;
+$spacing-10: $base-spacing * 10;
+
 @mixin spacing($property, $spacing-factor, $important: false) {
     @if $important == true {
         #{$property}: $spacing-factor * $base-spacing !important;
