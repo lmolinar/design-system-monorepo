@@ -1,6 +1,11 @@
-@import "settings";
+@use "colors";
 
-// Globals taken from https://github.com/foundation/foundation-sites/blob/develop/scss/_global.scss
+$body-background: white;
+$body-font-family: "InterVariable", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$global-font-size: 100%;
+$global-lineheight: 1.5;
+$global-radius: 0;
+$global-weight-normal: 400;
 
 html {
     box-sizing: border-box;
@@ -31,7 +36,7 @@ body {
     -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
 
     background: $body-background;
-    color: $black;
+    color: colors.$black;
 }
 
 img {

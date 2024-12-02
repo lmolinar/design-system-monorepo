@@ -6,6 +6,6 @@ module.exports = () => ({
         require("autoprefixer")(),
         require("postcss-preset-env")(),
         require("postcss-discard-comments")({ removeAll: true }),
-        require("postcss-csso")(),
+        require("cssnano")(),
     ],
 });

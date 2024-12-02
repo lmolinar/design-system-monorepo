@@ -1,0 +1,252 @@
+@use "@lok/styles/colors.scss" as colors;
+@use "@lok/styles/utils.scss" as utils;
+
+// valign
+
+.valign-top {
+    vertical-align: top;
+}
+.valign-middle {
+    vertical-align: middle;
+}
+.valign-bottom {
+    vertical-align: bottom;
+}
+.valign-baseline {
+    vertical-align: baseline;
+}
+
+// cursor
+
+$cursorTypes: "pointer", "not-allowed", "default", "none", "progress", "text", "grab", "grabbing";
+
+@each $cursorValue in $cursorTypes {
+    .cursor-#{$cursorValue} {
+        cursor: #{$cursorValue};
+    }
+}
+
+// border
+
+@each $color, $colorPal in colors.$designSystemPalette {
+    @each $shade, $value in $colorPal {
+        .b-c-#{$color}-#{$shade} {
+            border-color: $value;
+        }
+    }
+}
+
+.b-r-sm {
+    border-radius: 4px;
+}
+.b-r-lg {
+    border-radius: 8px;
+}
+.b-r-round {
+    border-radius: 50%;
+}
+.b-w-1 {
+    border-width: 1px;
+    border-style: solid;
+}
+.b-w-2 {
+    border-width: 2px;
+    border-style: solid;
+}
+
+// color
+
+@each $color, $colorPal in colors.$designSystemPalette {
+    @each $shade, $value in $colorPal {
+        .c-#{$color}-#{$shade} {
+            color: $value;
+        }
+        .bg-#{$color}-#{$shade} {
+            background-color: $value;
+        }
+    }
+}
+.bg-black-normal {
+    background-color: utils.color("black");
+}
+.c-black-normal {
+    color: utils.color("black");
+}
+.bg-white-normal {
+    background-color: colors.$white;
+}
+.c-white-normal {
+    color: colors.$white;
+}
+
+// flex
+
+$flexItemProperties: order, flex-shrink;
+
+@for $i from 0 to 3 {
+    @each $property in $flexItemProperties {
+        .#{$property}-#{$i} {
+            #{$property}: #{$i};
+        }
+    }
+}
+
+@for $i from 0 to 11 {
+    .flex-grow-#{$i} {
+        flex-grow: #{$i};
+    }
+}
+
+$flexBasisValues: "auto", "initial", "inherit";
+
+@each $fbValue in $flexBasisValues {
+    .flex-basis-#{$fbValue} {
+        flex-basis: #{$fbValue};
+    }
+}
+
+.flex-basis-33pct {
+    flex-basis: 33.33%;
+}
+.flex-basis-50pct {
+    flex-basis: 50%;
+}
+.flex-basis-66pct {
+    flex-basis: 66.66%;
+}
+
+@for $i from 0 to 21 {
+    .flex-basis-#{$i*5} {
+        flex-basis: #{$i * 5%};
+    }
+}
+
+$alignSelfValues: "auto", "flex-start", "flex-end", "center", "baseline", "stretch";
+
+@each $asValue in $alignSelfValues {
+    .align-self-#{$asValue} {
+        align-self: #{$asValue};
+    }
+}
+
+// spacing
+
+$base-spacing: 0.25rem;
+
+/// Mixins
+
+@mixin spacing($property, $spacing-factor) {
+    #{$property}: $spacing-factor * $base-spacing;
+}
+
+/// Variables
+
+$spacing-1: $base-spacing;
+$spacing-2: $base-spacing * 2;
+$spacing-3: $base-spacing * 3;
+$spacing-4: $base-spacing * 4;
+$spacing-5: $base-spacing * 5;
+$spacing-6: $base-spacing * 6;
+$spacing-7: $base-spacing * 7;
+$spacing-8: $base-spacing * 8;
+$spacing-9: $base-spacing * 9;
+$spacing-10: $base-spacing * 10;
+
+/// Helper classes for spacings
+
+/*
+Usage example:
+Put the following class names on elements to give spacing.
+padding-bottom-10, margin-left-4, top-10 and so on.
+*/
+
+/*
+TODO: Spacing primitives should be device agnostic.
+Ideally, we should not need the device specific classes.
+The spacing should "adapt" to the screen sizes.
+For example: .margin-1 could be 8px on desktop, 6px on tablet and 4px on small.
+*/
+
+$ds-spacings: margin, margin-left, margin-right, margin-top, margin-bottom, padding, padding-left, padding-right,
+    padding-top, padding-bottom;
+@each $property in $ds-spacings {
+    @for $i from 0 to 11 {
+        .#{$property}-#{$i} {
+            @include spacing($property, $i);
+        }
+
+        .h-#{$property}-#{$i}:hover {
+            @include spacing($property, $i);
+        }
+    }
+    .#{$property}-0p5 {
+        @include spacing($property, 0.5);
+    }
+    .#{$property}-1p5 {
+        @include spacing($property, 1.5);
+    }
+
+    .h-#{$property}-0p5:hover {
+        @include spacing($property, 0.5);
+    }
+    .h-#{$property}-1p5:hover {
+        @include spacing($property, 1.5);
+    }
+}
+
+// hover
+
+// transition
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+// hover: border
+@each $color, $colorPal in colors.$designSystemPalette {
+    @each $shade, $value in $colorPal {
+        .h-b-c-#{$color}-#{$shade}:hover {
+            border-color: $value;
+        }
+    }
+}
+.h-b-r-sm:hover {
+    border-radius: 4px;
+}
+.h-b-r-lg:hover {
+    border-radius: 8px;
+}
+.h-b-r-round:hover {
+    border-radius: 50%;
+}
+.h-b-w-1:hover {
+    border-width: 1px;
+    border-style: solid;
+}
+.h-b-w-2:hover {
+    border-width: 2px;
+    border-style: solid;
+}
+
+// hover: color, background-color
+@each $color, $colorPal in colors.$designSystemPalette {
+    @each $shade, $value in $colorPal {
+        .h-c-#{$color}-#{$shade}:hover {
+            color: $value;
+        }
+        .h-bg-#{$color}-#{$shade}:hover {
+            background-color: $value;
+        }
+    }
+}
+.h-bg-black-normal:hover {
+    background-color: utils.color("black");
+}
+.h-c-black-normal:hover {
+    color: utils.color("black");
+}
+.h-bg-white-normal:hover {
+    background-color: colors.$white;
+}
+.h-c-white-normal:hover {
+    color: colors.$white;
+}

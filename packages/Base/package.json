@@ -1,0 +1,20 @@
+{
+  "name": "@lok/base",
+  "version": "0.0.0",
+  "description": "Basic building block for the design system",
+  "author": "lmolinar",
+  "main": "dist/lok-base.cjs.js",
+  "module": "dist/lok-base.esm.js",
+  "types": "dist/lok-base.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/lmolinar/design-system-monorepo",
+  "peerDependencies": {
+    "@lok/base": ">=0.0.0",
+    "@lok/styles": "^0.0.0",
+    "@lok/types": "^0.0.0",
+    "classnames": "^2.5.1",
+    "react": "^18.3.1"
+  }
+}

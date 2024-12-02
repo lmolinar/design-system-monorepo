@@ -14,6 +14,10 @@ const build = (source) =>
     function build() {
         return src(source)
             .pipe(postcss()) // This uses config from postcss.config.js
+            .on("error", function (errorInfo) {
+                console.log(errorInfo.toString());
+                this.emit("end");
+            })
             .pipe(
                 rename(
                     // ../packages/__my-package__/src/styles.scss => ../packages/__my-package__/styles.css

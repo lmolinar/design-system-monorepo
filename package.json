@@ -12,23 +12,24 @@
     ]
   },
   "scripts": {
-    "build": "yarn build:css",
-    "build:css": "yarn gulp css:build",
-    "build:css:watch": "yarn gulp css:build:watch",
-    "lint": "yarn lint:eslint && yarn lint:style",
+    "build": "npm run build:ts && npm run build:css",
+    "build:css": "gulp css:build",
+    "build:css:watch": "gulp css:build:watch",
+    "build:ts": "DISABLE_PRECONSTRUCT_WORKER=true preconstruct build",
+    "lint": "npm run lint:eslint && npm run lint:style",
     "lint:eslint": "eslint --max-warnings 0 packages --ext .tsx --ext .ts",
     "lint:style": "stylelint \"packages/**/*.scss\""
   },
-  "preconstruct": {
-    "packages": [
-      "packages/*",
-      "!packages/Styles"
-    ]
-  },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@babel/preset-typescript": "^7.26.0",
     "@csstools/postcss-sass": "^5.1.1",
     "@lok/styles": "./packages/Styles",
+    "@preconstruct/cli": "^2.8.10",
+    "@types/react": "^18.3.12",
     "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
     "eslint": "^9.15.0",
     "gulp": "^5.0.0",
     "gulp-clean": "^0.4.0",
@@ -36,13 +37,19 @@
     "gulp-rename": "^2.0.0",
     "inter-ui": "^4.1.0",
     "postcss": "^8.4.49",
-    "postcss-csso": "^6.0.1",
     "postcss-discard-comments": "^7.0.3",
     "postcss-preset-env": "^10.1.1",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.4.1",
     "react": "^18.3.1",
     "stylelint": "^16.11.0",
     "stylelint-prettier": "^5.0.2",
     "typescript": "^5.7.2"
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*",
+      "!packages/Styles"
+    ]
   }
 }

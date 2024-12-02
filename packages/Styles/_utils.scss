@@ -1,7 +1,7 @@
 @use "sass:math";
 
-@import "unit";
-@import "breakpoints";
+@use "colors";
+@use "unit";
 
 @function calcEm($pxSize) {
     $emSize: math.div($pxSize, 16px);
@@ -43,9 +43,9 @@
 
 @function color($color, $shade: "normal") {
     @if $color == "black" {
-        @return $black;
+        @return colors.$black;
     } @else if $color == "white" {
-        @return $white;
+        @return colors.$white;
     } @else {
         @return map-get(map-get($designSystemPalette, $color), $shade);
     }
