@@ -1,0 +1,13 @@
+{
+  "name": "@lok/types",
+  "version": "0.0.0",
+  "description": "A collection of types to reuse across projects",
+  "author": "lmolinar",
+  "main": "dist/lok-types.cjs.js",
+  "module": "dist/lok-types.esm.js",
+  "types": "dist/lok-types.cjs.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/lmolinar/design-system-monorepo"
+}
